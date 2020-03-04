@@ -24,7 +24,9 @@ def valid_input(in1, in2, matrix):
 
 def winner(matrix):
     carryon = True
-    if (matrix[0][0] and matrix[0][1] and matrix[0][2] == 'X' ) or (matrix[1][0] and matrix[1][1] and matrix[1][2] == 'X') or (matrix[2][0] and matrix[2][1] and matrix[2][2] == 'X'):
+    if ((matrix[0][0] and matrix[0][1] and matrix[0][2]) == 'X') or ((matrix[1][0] and matrix[1][1] and matrix[1][2]) == 'X') or ((matrix[2][0] and matrix[2][1] and matrix[2][2]) == 'X')\
+        or ((matrix[0][0] and matrix[1][0] and matrix[2][0]) == 'X' ) or ((matrix[0][1] and matrix[1][1] and matrix[2][1]) == 'X') or ((matrix[0][2] and matrix[1][2] and matrix[2][2]) == 'X')\
+        or ((matrix[0][0] and matrix[1][1] and matrix[2][2]) == 'X' ) or ((matrix[0][2] and matrix[1][1] and matrix[2][0]) == 'X'):
         print("You win!!!")
         carryon = False
     else:
@@ -52,7 +54,6 @@ if __name__ == "__main__":
             row_in = input()
             print("Enter the col(1-3): ", end='')
             col_in = input()
-            valid_input(row_in, col_in, board)
             if(valid_input(row_in, col_in, board) == True):
                 break
 
